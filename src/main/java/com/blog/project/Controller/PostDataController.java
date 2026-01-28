@@ -22,7 +22,7 @@ public class PostDataController {
     }
 
     @DeleteMapping("/{id}")
-    public String DeleteBlog(@PathVariable String id){
+    public String DeleteBlog(@PathVariable UUID id){
         blogRepository.deleteById(id);
         return "Blog successfully deleted";
     }
