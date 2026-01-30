@@ -1,7 +1,7 @@
 package com.blog.project.Controller;
 
 import com.blog.project.Entity.BlogEntity;
-import com.blog.project.Repository.BlogRepository;
+import com.blog.project.Service.BlogService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,20 +10,20 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/blogay")
 public class PostDataController {
-    private final BlogRepository blogRepository;
+    private final BlogService blogService;
 
-    public PostDataController(BlogRepository blogRepository){
-        this.blogRepository = blogRepository;
+    public PostDataController(BlogService blogService){
+        this.blogService = blogService;
     }
 
     @PostMapping
     public BlogEntity PostData(@RequestBody BlogEntity newBlog){
-        return blogRepository.save(newBlog);
+        return blogService.createBlog(newBlog);
     }
 
     @DeleteMapping("/{id}")
     public String DeleteBlog(@PathVariable UUID id){
-        blogRepository.deleteById(id);
+        blogService.deleteBlog(id);
         return "Blog successfully deleted";
     }
 
@@ -32,15 +32,7 @@ public class PostDataController {
             @PathVariable UUID id,
             @RequestBody BlogEntity updatedBlog) {
 
-        BlogEntity existingBlog = blogRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Blog not found"));
-
-        existingBlog.setTitle(updatedBlog.getTitle());
-        existingBlog.setContent(updatedBlog.getContent());
-        existingBlog.setDescription(updatedBlog.getDescription());
-        existingBlog.setMood(updatedBlog.getMood());
-
-        return blogRepository.save(existingBlog);
+        return blogService.updateBlog(id, updatedBlog);
     }
 
 }
