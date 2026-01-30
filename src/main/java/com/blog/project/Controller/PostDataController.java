@@ -26,4 +26,21 @@ public class PostDataController {
         blogRepository.deleteById(id);
         return "Blog successfully deleted";
     }
+
+    @PutMapping("/{id}")
+    public BlogEntity updateBlogById(
+            @PathVariable UUID id,
+            @RequestBody BlogEntity updatedBlog) {
+
+        BlogEntity existingBlog = blogRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Blog not found"));
+
+        existingBlog.setTitle(updatedBlog.getTitle());
+        existingBlog.setContent(updatedBlog.getContent());
+        existingBlog.setDescription(updatedBlog.getDescription());
+        existingBlog.setMood(updatedBlog.getMood());
+
+        return blogRepository.save(existingBlog);
+    }
+
 }
