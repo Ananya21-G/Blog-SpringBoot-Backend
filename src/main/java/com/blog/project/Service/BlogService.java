@@ -1,5 +1,6 @@
 package com.blog.project.Service;
 
+import com.blog.project.DTO.BlogSummaryDTO;
 import com.blog.project.Entity.BlogEntity;
 import com.blog.project.Repository.BlogRepository;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,8 @@ public class BlogService {
         this.blogRepository = blogRepository;
     }
 
-    public List<BlogEntity> getAllBlogs(){
-        return blogRepository.findAll();
+    public List<BlogSummaryDTO> getAllBlogs(){
+        return blogRepository.findAllBlogSummaries();
     }
 
     public BlogEntity getBlogById(UUID blogId) {

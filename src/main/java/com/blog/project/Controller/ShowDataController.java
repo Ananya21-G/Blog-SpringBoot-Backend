@@ -1,5 +1,6 @@
 package com.blog.project.Controller;
 
+import com.blog.project.DTO.BlogSummaryDTO;
 import com.blog.project.Entity.BlogEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,7 @@ public class ShowDataController {
 
 
     @GetMapping
-    public List<BlogEntity> GetData(){
+    public List<BlogSummaryDTO> GetData(){
         return blogService.getAllBlogs();
     }
 
