@@ -2,16 +2,15 @@ package com.blog.project.Controller;
 
 import com.blog.project.DTO.BlogSummaryDTO;
 import com.blog.project.Entity.BlogEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.blog.project.Service.BlogService;
 import java.util.List;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/blog")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
+
 public class ShowDataController {
     private final BlogService blogService;
 
