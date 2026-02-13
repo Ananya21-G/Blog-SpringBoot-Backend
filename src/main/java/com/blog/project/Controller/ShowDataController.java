@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/blog")
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "https://ananya-blog.vercel.app")
 
 public class ShowDataController {
     private final BlogService blogService;

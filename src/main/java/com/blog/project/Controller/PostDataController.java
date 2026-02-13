@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/blogay")
+@RequestMapping("/secret")
 public class PostDataController {
     private final BlogService blogService;
 

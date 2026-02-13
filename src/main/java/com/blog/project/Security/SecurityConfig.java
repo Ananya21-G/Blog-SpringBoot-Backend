@@ -17,8 +17,8 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/blogay").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/blogay/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/secret").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/secret/{id}").hasRole("ADMIN")
                         .anyRequest().permitAll()
                 )
                 .httpBasic(Customizer.withDefaults());
