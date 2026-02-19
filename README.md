@@ -27,7 +27,7 @@ It focuses on:
 
 > High-level architecture of the application
 
-![Architecture Diagram](./images/architecture.png)
+![Architecture Diagram](./Assets/blog_Architecture.png)
 
 **Architecture highlights**
 - Layered architecture (Controller → Service → Repository)
@@ -41,7 +41,7 @@ It focuses on:
 
 > End-to-end request flow for read and write operations
 
-![Data Flow Diagram](./images/data-flow.png)
+![Data Flow Diagram](./Assets/Blog_dataflow.png)
 
 **Flow summary**
 1. Client sends HTTP request
