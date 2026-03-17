@@ -1,3 +1,5 @@
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge)](https://ananya-blog.vercel.app/)
+
 #  Personal Blog Backend — Spring Boot
 
 A backend system for a personal blogging platform, designed with clean architecture, RESTful APIs, and real-world backend best practices.
